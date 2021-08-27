@@ -1,0 +1,166 @@
+.container{
+    background-color: var(--Grey-light-1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    max-width: 120rem;
+    min-height: 50rem;
+    margin: 8rem auto;
+    //border-radius: 100px;
+
+    @media only screen and (max-width: $bp-largest){
+    margin: 0;
+    width: 100%;
+    min-width: 100%;
+    
+    }
+}
+.header{
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: 1px solid var(--Grey-light-2);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
+    @media only screen and (max-width: $bp-smaller){
+        flex-wrap: wrap;
+        height: 11rem;
+    }
+
+}
+.content{
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium){
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+    }
+
+}
+.sidebar{
+    flex:0 0 20%;
+    background-color: var(--Grey-dark-1);
+}
+.hotel-view{
+    flex:1;
+    background-color: #fff;
+}
+
+.details{
+    padding: 4.5rem;
+    display: flex;
+    border-bottom: 1px solid var(--Grey-light-3);
+    background-color: var(--Grey-light-1);
+    @media only screen and (max-width: $bp-medium){
+       padding: 3rem;
+      }
+    @media only screen and (max-width: $bp-small){
+        flex-direction: column;
+       }
+
+
+}
+.description{
+    box-shadow: 0 2rem 3rem rgba(0,0,0,0.03);
+    flex: 0 0 60%;
+    background-color: #fff;
+    padding: 3rem;
+    margin-right: 4.5rem;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+    @media only screen and (max-width: $bp-medium){
+        padding: 2rem;
+        margin-right: 3rem;
+       }
+       @media only screen and (max-width: $bp-medium){
+        padding: 2rem;
+        margin-right: 0;
+       }
+
+    &_paragraph{
+        font-size: 1.3rem;
+        line-height: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    &_lists{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+.list{
+    list-style: none;
+    padding: 3rem 0;
+    &_items{
+
+    }
+    &_items::before{
+        content: '';
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: 0.7rem;
+       //older browser not supported mask
+        background-image: url(../img/chevron-thin-right.svg);
+       background-size: cover;
+       @supports (-webkit-mask-image: url() )or (-webkit-mask-image: url()){
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        background-image: none;
+       }
+        
+    }
+}
+.user_review{
+    flex: 1;
+}
+
+.recommend{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+   
+
+    &_img{
+        display: block;
+    }
+    &_count{
+       
+       
+    }
+    &_photo{
+        box-sizing: content-box;//great for
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+       // transform: translate(-50%,-50%);
+        border: 2px solid #fff;
+    }
+
+
+    &_photo:not(:last-child){
+        margin-right: -1.5rem;
+    }
+    /*&_photo1{
+        top: 0;
+        left: 0;
+
+    }
+    &_photo2{
+        top: 0;
+        left: 2rem;
+    }
+    &_photo3{
+        top: 0;
+        left: 4rem;
+    }
+    &_photo4{
+        top: 0;
+        left: 6rem;
+        
+    }*/
+}
